@@ -76,8 +76,8 @@ font: 11pt &quot;MS Shell Dlg 2&quot;;</string>
      <rect>
       <x>70</x>
       <y>770</y>
-      <width>151</width>
-      <height>71</height>
+      <width>150</width>
+      <height>70</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -93,10 +93,10 @@ font: 15pt &quot;MS Shell Dlg 2&quot;;</string>
    <widget class="QPushButton" name="mode2btn">
     <property name="geometry">
      <rect>
-      <x>370</x>
+      <x>375</x>
       <y>770</y>
-      <width>151</width>
-      <height>71</height>
+      <width>150</width>
+      <height>70</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -112,10 +112,10 @@ font: 15pt &quot;MS Shell Dlg 2&quot;;</string>
    <widget class="QPushButton" name="mode3btn">
     <property name="geometry">
      <rect>
-      <x>670</x>
+      <x>680</x>
       <y>770</y>
-      <width>151</width>
-      <height>71</height>
+      <width>150</width>
+      <height>70</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -132,9 +132,9 @@ font: 15pt &quot;MS Shell Dlg 2&quot;;</string>
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>540</y>
-      <width>271</width>
-      <height>341</height>
+      <y>520</y>
+      <width>270</width>
+      <height>350</height>
      </rect>
     </property>
     <property name="maximumSize">
@@ -145,6 +145,7 @@ font: 15pt &quot;MS Shell Dlg 2&quot;;</string>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color:white;
+border-radius:12px
 </string>
     </property>
     <property name="text">
@@ -160,10 +161,10 @@ font: 15pt &quot;MS Shell Dlg 2&quot;;</string>
    <widget class="QLabel" name="label_4">
     <property name="geometry">
      <rect>
-      <x>310</x>
-      <y>540</y>
-      <width>271</width>
-      <height>341</height>
+      <x>315</x>
+      <y>520</y>
+      <width>270</width>
+      <height>350</height>
      </rect>
     </property>
     <property name="maximumSize">
@@ -174,6 +175,7 @@ font: 15pt &quot;MS Shell Dlg 2&quot;;</string>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color:white;
+border-radius: 12px
 </string>
     </property>
     <property name="text">
@@ -189,10 +191,10 @@ font: 15pt &quot;MS Shell Dlg 2&quot;;</string>
    <widget class="QLabel" name="label_5">
     <property name="geometry">
      <rect>
-      <x>610</x>
-      <y>540</y>
-      <width>271</width>
-      <height>341</height>
+      <x>620</x>
+      <y>520</y>
+      <width>270</width>
+      <height>350</height>
      </rect>
     </property>
     <property name="maximumSize">
@@ -203,6 +205,7 @@ font: 15pt &quot;MS Shell Dlg 2&quot;;</string>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color:white;
+border-radius: 12px
 </string>
     </property>
     <property name="text">

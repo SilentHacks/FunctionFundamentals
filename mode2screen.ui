@@ -119,6 +119,7 @@ border: none;
     <property name="styleSheet">
      <string notr="true">background-color: white;
 font: 12pt &quot;MS Shell Dlg 2&quot;;
+border-radius: 12px
 </string>
     </property>
     <property name="text">
@@ -148,7 +149,7 @@ font: 16pt &quot;MS Shell Dlg 2&quot;;
      <string>Injective</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="answer">
+   <widget class="QPushButton" name="go">
     <property name="geometry">
      <rect>
       <x>350</x>
@@ -183,7 +184,7 @@ color: white;
 </string>
     </property>
     <property name="text">
-     <string>Message</string>
+     <string/>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>

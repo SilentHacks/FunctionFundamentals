@@ -94,7 +94,7 @@ border: none;
      <string notr="true">background-color: rgb(79, 79, 79);
 color: white;
 font: 16pt &quot;MS Shell Dlg 2&quot;;
-</string>
+border-radius:12px</string>
     </property>
     <property name="text">
      <string/>
@@ -116,6 +116,7 @@ font: 16pt &quot;MS Shell Dlg 2&quot;;
      <string notr="true">background-color: rgb(79, 79, 79);
 color: white;
 font: 16pt &quot;MS Shell Dlg 2&quot;;
+border-radius:12px
 </string>
     </property>
     <property name="text">

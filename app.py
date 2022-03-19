@@ -39,13 +39,52 @@ class mode1screen(QDialog):
         #                                                               #
         #     change this part with actual question                     #
         #################################################################
-        num = random.randint(3, 99)
+        num = random.randint(2,300)
+        mode = random.randint(1,2)
+        #1 = range questions
+        #2 = domain question 
         self.question.setText("num is "+ str(num))
+        
+        self.low_bound = QLineEdit(self)
+        self.high_bound = QLineEdit(self)
+        self.label = QLabel(self)
+        self.label.setGeometry(70,520,600,90)
+        if mode == 1:
+            
+            self.label.setText("The range of the function is           ,")
+            self.low_bound.move(525,520)
+            self.high_bound.move(635,520)
+            self.go.clicked.connect(self.rangecheck)
+            
+        else:
+            self.label.setText("The domain of the function is          ,")
+            self.low_bound.move(530,520)
+            self.high_bound.move(640,520)
+            self.go.clicked.connect(self.domaincheck)
+            
+        self.label.setStyleSheet("color: white; border: none; font: 16pt 'MS Shell Dlg 2';")
+        self.label.setAlignment(QtCore.Qt.AlignCenter)
+        
+        
+        
+        self.low_bound.resize(85,80)
+        self.low_bound.setStyleSheet("color: black; background-color: white ; font: 18pt 'MS Shell Dlg 2'; border-radius: 12px")
+        self.low_bound.setAlignment(QtCore.Qt.AlignCenter)
+        
+        
+        
+        self.high_bound.resize(85,80)
+        self.high_bound.setStyleSheet("color: black; background-color: white ; font: 18pt 'MS Shell Dlg 2'; border-radius: 12px")
+        self.high_bound.setAlignment(QtCore.Qt.AlignCenter)
         
         #############################
         
         self.home.clicked.connect(self.gohome)  
         self.skip.clicked.connect(self.gotomode1) 
+        
+        
+                    
+                    
         
     def gohome(self):
         mode = WelcomeScreen()
@@ -56,7 +95,30 @@ class mode1screen(QDialog):
         mode = mode1screen()
         widget.addWidget(mode)
         widget.setCurrentIndex(widget.currentIndex()+1)
-        
+    
+    def domaincheck(self):
+            value = 2
+            low = self.low_bound.text()
+            high = self.high_bound.text()
+            if value == 1:
+                self.message.setText("Good job cunt")
+            else:
+                self.message.setText("You dumb cunt")
+            
+    def rangecheck(self):
+            value = 2
+            low = self.low_bound.text()
+            high = self.high_bound.text()
+            
+            
+                
+                
+            
+            
+            if value == 1:
+                self.message.setText("Good job cunt")
+            else:
+                self.message.setText("You dumb cunt")   
 
 
 class mode2screen(QDialog):
@@ -80,7 +142,7 @@ class mode2screen(QDialog):
         self.home.clicked.connect(self.gohome) 
         self.skip.clicked.connect(self.gotomode2)
         self.choice.clicked.connect(self.btnbijective)
-        self.answer.clicked.connect(self.answercheck)
+        self.go.clicked.connect(self.answercheck)
         
     def gohome(self):
         mode = WelcomeScreen()
@@ -96,20 +158,20 @@ class mode2screen(QDialog):
         self.choice.setText("Bijective")
         self.choice.clicked.connect(self.btnsurjective)
         self.answervalue = 2
-        self.answer.clicked.connect(self.answercheck)
+        
         
     def btnsurjective(self):
         self.choice.setText("Surjective")
         self.choice.clicked.connect(self.btninjective)
         self.answervalue= 3
-        self.answer.clicked.connect(self.answercheck)
+      
         
         
     def btninjective(self):
         self.choice.setText("Injective")
         self.choice.clicked.connect(self.btnbijective)
         self.answervalue = 1
-        self.answer.clicked.connect(self.answercheck)
+        
     
     
     
