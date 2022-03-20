@@ -3,37 +3,37 @@ import random
 
 master = []
 operations = ["*", "/", "+", "-"]
-power = [0.5, (0), 1, 2, 3]
+numbers = ["0.5", "0", "1", "2", "3"]
 
-def choosePower():
-    list = ["x"]
-    randomIndex = random.randint(0, len(power)-1)
-    randomPower = power[randomIndex]
+def tuple():
+    randomIndexOperation = random.randint(0,len(operations)-1)
+    indexOperation = operations[randomIndexOperation]
 
-    list.append(randomPower)
-    master.append(list)
+    randomIndexNumber = random.randint(0,len(numbers)-1)
+    indexNumber = numbers[randomIndexNumber]
 
-    return master
-    
-def moveGeneration():
-    combinedList = operations + power
+    list = [indexNumber, indexOperation]
 
-    randomIndex = random.randint(0, len(combinedList)-1)
-    randomMove = combinedList[randomIndex]
+    return list
 
-    return randomMove
+def popper(list):
+    randomIndexPopper = random.randint(0,len(list)-1)
+    indexElement = list[randomIndexPopper]
 
-# 
+    return indexElement
 
-def questionGeneration(randomMove):
-    list = []
-    if randomMove in power:
-        list.append(randomMove)
+def equation(indexElement):
+    ex = "x"
+    power = "^"
+    if indexElement in numbers:
+        finalString = ex + power + indexElement
+        return finalString
     else:
-        list.insert(0, randomMove)
+        randomNumber = str(random.randint(0,100))
+        finalString = ex + indexElement + randomNumber
+        return finalString
 
-for x in range(0,5):
-    questionGeneration(moveGeneration())
 
-print(list)
-
+list = tuple()
+value = popper(list)
+print(equation(value))
