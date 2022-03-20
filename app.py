@@ -5,7 +5,10 @@ from PyQt5.QtWidgets import QApplication, QDialog, QStackedWidget, QLabel, QLine
 from PyQt5 import QtCore
 from PyQt5.uic import loadUi
 
+
 from questionGeneration import get_equation
+from utils.wolfram_query import is_function
+from utils.input_parser import input_legal, can_parse
 
 
 class WelcomeScreen(QDialog):
@@ -112,8 +115,6 @@ class mode1screen(QDialog):
 
 
 class mode2screen(QDialog):
-    answervalue = int
-
     def __init__(self):
 
         super(mode2screen, self).__init__()
@@ -126,6 +127,17 @@ class mode2screen(QDialog):
         #################################################################
         equation = get_equation()
         self.question.setText(f"Equation: {equation}")
+
+        self.injective = is_function(equation, 'injective')
+        self.surjective = is_function(equation, 'surjective')
+        self.bijective = self.injective and self.surjective
+
+        if self.bijective:
+            self.correct_answer = 2
+        elif self.injective:
+            self.correct_answer = 3
+        else:
+            self.correct_answer = 1
 
         ############################################
         self.home.clicked.connect(self.gohome)
@@ -164,7 +176,7 @@ class mode2screen(QDialog):
         #################################################################  
 
     def answercheck(self):
-        if self.answervalue == 2:
+        if self.answervalue == self.correct_answer:
             self.message.setText("Good job cunt")
         else:
             self.message.setText("You dumb cunt")
@@ -273,6 +285,15 @@ class mode3screen(QDialog):
         function2 = self.textbox2.text()
         if self.question_num == 3:
             function3 = self.textbox3.text()
+            if not input_legal(function3) or not can_parse(function3):
+                raise ValueError('Illegal function')
+
+        if not (input_legal(function1) and input_legal(function2)):
+            raise ValueError('Illegal function')
+        elif not (can_parse(function1) and can_parse(function2)):
+            raise ValueError('Illegal function')
+
+        # TODO: Check the return value of the composite function
 
         if value == 1:
             self.message.setText("Good job cunt")
